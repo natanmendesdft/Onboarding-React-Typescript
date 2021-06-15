@@ -33,18 +33,20 @@ function App() {
     setList(newArray);
   }
 
+  function addItem(event: any){
+    event.preventDefault();
+    const listItem = { task: item, finished: false };
+    if (!!listItem) {
+      setList((prevList) => ([...prevList, listItem]));
+      setItem("");
+    }
+  }
+
   return (
     <ModalConteiner>
       <ModalContent>
         <Form
-          onSubmit={(event) => {
-            event.preventDefault();
-            const listItem = { task: item, finished: false };
-            if (!!listItem) {
-              setList([...list, listItem]);
-              setItem("");
-            }
-          }}
+          onSubmit={(event) => addItem(event)}
         >
           <InputForm
             type="text"
