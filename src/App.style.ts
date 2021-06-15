@@ -28,7 +28,7 @@ export const ListContainer = styled.ul`
 export const Form = styled.form`
   display: flex;
   border: 2px solid #387fd0;
-  border-radius: 4px;
+  border-radius: 4px; 
 `;
 
 export const InputForm = styled.input`
